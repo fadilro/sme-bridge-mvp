@@ -7,14 +7,14 @@ SME Bridge uses [Ollama](https://ollama.ai/) for local multimodal inference. Thi
 The following environment variables in `apps/api/.env` control the LLM connection:
 
 - `OLLAMA_BASE_URL`: The URL where Ollama is running (default: `http://localhost:11434`).
-- `GEMMA_MODEL_NAME`: The specific model to use (default: `gemma:2b` or similar multimodal model).
+- `GEMMA_MODEL_NAME`: The specific model to use (default: `gemma4:e2b` or similar multimodal model).
 
 ## Setup Instructions
 
 1. **Install Ollama:** Download and install from [ollama.ai](https://ollama.ai/).
 2. **Pull the Model:**
    ```bash
-   ollama pull gemma:2b
+   ollama pull gemma4:e2b
    ```
 3. **Verify Ollama is Running:**
    ```bash

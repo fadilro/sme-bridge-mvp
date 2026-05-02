@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     SUPABASE_SERVICE_ROLE_KEY: str = "test_service_key"
     SUPABASE_STORAGE_BUCKET: str = "test-bucket"
     OLLAMA_BASE_URL: str = "http://localhost:11434"
-    GEMMA_MODEL_NAME: str = "gemma:2b"
+    GEMMA_MODEL_NAME: str = "gemma4:e2b"
     EMISSION_FACTOR_ELECTRICITY_KWH: float = 0.58  # Default test factor
 
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=True)

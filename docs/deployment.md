@@ -9,7 +9,7 @@ This guide covers setting up the application for local development and testing, 
 - `SUPABASE_SERVICE_ROLE_KEY`: The service role key for your Supabase project (do not use the anon key).
 - `SUPABASE_STORAGE_BUCKET`: The name of the storage bucket for raw files (e.g., `utility-bills`).
 - `OLLAMA_BASE_URL`: URL where Ollama is running (default: `http://localhost:11434`).
-- `GEMMA_MODEL_NAME`: The model name to use for extraction (e.g., `gemma2`).
+- `GEMMA_MODEL_NAME`: The model name to use for extraction (e.g., `gemma4:e2b`).
 - `EMISSION_FACTOR_ELECTRICITY_KWH`: The carbon emission factor (e.g., `0.58`).
 
 ### Frontend (`apps/web/.env`)
@@ -54,7 +54,7 @@ cloudflared tunnel --url http://localhost:8000
 1. Install [Ollama](https://ollama.ai).
 2. Start Ollama and pull the required model:
    ```bash
-   ollama run gemma2
+   ollama run gemma4:e2b
    ```
 3. The API will communicate with Ollama at `http://localhost:11434`.
 4. *Test Fallback*: If you don't have GPU resources locally, use `FakeLLMClient` in your tests to bypass real inference.

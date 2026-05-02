@@ -10,5 +10,5 @@ def test_settings_load_with_test_defaults() -> None:
     assert settings.SUPABASE_SERVICE_ROLE_KEY == "test_service_key"
     assert settings.SUPABASE_STORAGE_BUCKET == "test-bucket"
     assert settings.OLLAMA_BASE_URL == "http://localhost:11434"
-    assert settings.GEMMA_MODEL_NAME == "gemma:2b"
+    assert settings.GEMMA_MODEL_NAME == "gemma4:e2b"
     assert settings.EMISSION_FACTOR_ELECTRICITY_KWH == 0.58
