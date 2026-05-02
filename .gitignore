@@ -72,3 +72,8 @@ dist-ssr/
 .idea/
 *.swp
 *.swo
+
+# Project management files
+todo.md
+prompt_plan.md
+SME_Bridge_Specification.md
