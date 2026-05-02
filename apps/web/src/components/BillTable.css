@@ -1,0 +1,73 @@
+.table-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.bill-table th {
+  background: var(--bg-surface-light);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.bill-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.bill-table tr:last-child td {
+  border-bottom: none;
+}
+
+.filename {
+  font-weight: 500;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.flagged_low_confidence {
+  background: rgba(210, 153, 34, 0.15);
+  color: var(--warning);
+}
+
+.status-badge.flagged_unreadable {
+  background: rgba(248, 81, 73, 0.15);
+  color: var(--danger);
+}
+
+.btn-inspect {
+  color: var(--accent-light);
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.btn-inspect:hover {
+  text-decoration: underline;
+}
+
+.empty-table {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-dim);
+  background: var(--bg-surface);
+  border: 1px dashed var(--glass-border);
+  border-radius: 12px;
+}

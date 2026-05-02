@@ -1,0 +1,45 @@
+.alerts-bar {
+  background: rgba(210, 153, 34, 0.1);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.alerts-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+}
+
+.alert-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-details {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.alert-action {
+  background-color: var(--warning);
+  color: var(--bg-deep);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
+}
+
+.alert-action:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}

@@ -1,0 +1,49 @@
+.breakdown-chart-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.stacked-bar {
+  height: 32px;
+  display: flex;
+  background-color: var(--bg-surface-light);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.bar-segment {
+  height: 100%;
+  transition: width 1s ease-out;
+}
+
+.bar-segment.electricity { background-color: var(--accent); }
+.bar-segment.water { background-color: #0093e9; }
+
+.chart-legend {
+  display: flex;
+  gap: 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.electricity { background-color: var(--accent); }
+.dot.water { background-color: #0093e9; }
+
+.legend-item .label {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}

@@ -1,0 +1,87 @@
+.impact-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.impact-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.impact-card.total {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(46, 160, 67, 0.05) 100%);
+  border-left: 4px solid var(--accent);
+}
+
+.card-label {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-value .number {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.card-value .unit {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.card-trend {
+  font-size: 0.75rem;
+  margin-top: auto;
+}
+
+.progress-mini {
+  height: 6px;
+  background-color: var(--bg-surface-light);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 3px;
+}
+
+.progress-bar.water {
+  background-color: #0093e9;
+}
+
+.overview-skeleton {
+  height: 150px;
+  background: var(--bg-surface);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  border: 1px dashed var(--glass-border);
+}

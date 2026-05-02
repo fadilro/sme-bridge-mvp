@@ -1,0 +1,123 @@
+.review-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .review-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bill-preview-section, .approval-form-section {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.preview-placeholder {
+  aspect-ratio: 1 / 1.4;
+  background: var(--bg-surface-light);
+  border: 2px dashed var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.extraction-log {
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.extraction-log h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.extraction-log p {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.status-text.flagged_low_confidence { color: var(--warning); }
+.status-text.flagged_unreadable { color: var(--danger); }
+
+.approval-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.approval-form input, .approval-form select {
+  background: var(--bg-surface-light);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+.approval-form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-approve {
+  background-color: var(--accent);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 1rem;
+  transition: var(--transition-fast);
+}
+
+.btn-approve:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-approve:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-back {
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  text-align: center;
+}
