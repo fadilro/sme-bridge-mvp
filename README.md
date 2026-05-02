@@ -43,7 +43,7 @@ SUPABASE_URL=your_supabase_url
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 SUPABASE_STORAGE_BUCKET=test-bucket
 OLLAMA_BASE_URL=http://localhost:11434
-GEMMA_MODEL_NAME=gemma:2b
+GEMMA_MODEL_NAME=gemma4:e2b
 POSTMARK_SERVER_TOKEN=your_token
 EMAIL_BOUNCE_SENDER=noreply@smebridge.com
 EMISSION_FACTOR_ELECTRICITY_KWH=0.58
@@ -58,7 +58,7 @@ EMISSION_FACTOR_ELECTRICITY_KWH=0.58
 1. Install [Ollama](https://ollama.com/).
 2. Pull the Gemma model exactly as named in your `.env` file:
    ```bash
-   ollama run gemma:2b
+   ollama run gemma4:e2b
    ```
 3. Ensure the Ollama server is running (usually backgrounded automatically, running on `http://localhost:11434`).
 
@@ -89,9 +89,26 @@ If you are hooking up a real email provider (like Postmark or SendGrid), they ca
 
 ---
 
-## 4. Running the Application Locally
+## 4. Running the Application
 
-You will need three terminal windows to run the complete MVP locally:
+### Option A: Start Everything at Once (Recommended)
+We provide convenience scripts to start the Backend, Worker, and Frontend in a single terminal window.
+
+**On macOS/Linux:**
+```bash
+chmod +x dev.sh
+./dev.sh
+```
+
+**On Windows (PowerShell):**
+```powershell
+.\dev.ps1
+```
+
+---
+
+### Option B: Manual Startup (Three Terminals)
+If you prefer to see logs in separate windows, use these commands:
 
 **Terminal 1: FastAPI Server**
 ```bash
