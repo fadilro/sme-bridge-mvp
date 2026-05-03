@@ -4,6 +4,7 @@ import AlertsBar from '../components/AlertsBar';
 import BreakdownChart from '../components/BreakdownChart';
 import { getDashboardOverview, getDashboardAlerts } from '../api/client';
 import type { DashboardOverview, DashboardAlerts } from '../api/client';
+import { useSme } from '../context/SmeContext';
 
 const DashboardPage: React.FC = () => {
   const [overview, setOverview] = useState<DashboardOverview | null>(null);
@@ -11,8 +12,8 @@ const DashboardPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // MVP: Hardcoded SME ID
-  const SME_ID = 'test_sme';
+  // SME ID is configured via VITE_SME_ID in apps/web/.env
+  const { selectedSmeId: SME_ID } = useSme();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +34,7 @@ const DashboardPage: React.FC = () => {
     };
 
     fetchData();
-  }, []);
+  }, [SME_ID]);
 
   if (error) {
     return (

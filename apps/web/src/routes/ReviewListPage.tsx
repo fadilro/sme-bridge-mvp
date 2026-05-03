@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import BillTable from '../components/BillTable';
 import { apiClient, UtilityBillStatus } from '../api/client';
 import type { UtilityBillRecord } from '../api/client';
+import { useSme } from '../context/SmeContext';
 
 const ReviewListPage: React.FC = () => {
   const [bills, setBills] = useState<UtilityBillRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const SME_ID = 'test_sme'; // MVP Hardcoded
+  const { selectedSmeId: SME_ID } = useSme(); // Set via SME selector in sidebar
 
   useEffect(() => {
     const fetchBills = async () => {
@@ -24,7 +25,7 @@ const ReviewListPage: React.FC = () => {
     };
 
     fetchBills();
-  }, []);
+  }, [SME_ID]);
 
   return (
     <div className="review-list-page">

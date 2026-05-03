@@ -1,9 +1,10 @@
 import React from 'react';
 import { downloadExport } from '../api/client';
+import { useSme } from '../context/SmeContext';
 import './ExportsPage.css';
 
 const ExportsPage: React.FC = () => {
-  const SME_ID = 'test_sme'; // MVP Hardcoded
+  const { selectedSmeId: SME_ID } = useSme(); // Set via SME selector in sidebar
 
   return (
     <div className="exports-page">

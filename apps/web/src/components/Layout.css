@@ -64,6 +64,15 @@
 .sme-badge {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sme-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  font-weight: 600;
 }
 
 .sme-name {
@@ -75,6 +84,26 @@
   font-size: 0.75rem;
   color: var(--text-dim);
 }
+
+.sme-selector {
+  background-color: var(--bg-surface-light);
+  color: var(--text-main);
+  border: 1px solid var(--glass-border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.sme-selector:hover,
+.sme-selector:focus {
+  border-color: var(--accent);
+}
+
 
 .page-header {
   display: flex;

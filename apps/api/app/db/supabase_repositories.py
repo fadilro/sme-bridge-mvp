@@ -38,6 +38,16 @@ class SupabaseSmeRepository(SmeRepository):
             return cast(Dict[str, Any], response.data[0])
         return None
 
+    def list_all_smes(self) -> List[Dict[str, Any]]:
+        response = self.client.table("smes") \
+            .select("id, company_name, plc_id") \
+            .order("company_name") \
+            .execute()
+        if response.data and isinstance(response.data, list):
+            return [cast(Dict[str, Any], row) for row in response.data]
+        return []
+
+
 class SupabaseUtilityBillRepository(UtilityBillRepository):
     def __init__(self, client: Client):
         self.client = client

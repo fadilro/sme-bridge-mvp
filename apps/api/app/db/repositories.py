@@ -21,6 +21,13 @@ class SmeRepository(Protocol):
         """
         ...
 
+    def list_all_smes(self) -> List[Dict[str, Any]]:
+        """
+        Returns all SMEs. Used by the frontend SME selector.
+        """
+        ...
+
+
 class UtilityBillRepository(Protocol):
     def create_pending_utility_bill(self, sme_id: str, raw_file_url: str, original_filename: Optional[str]) -> str:
         """

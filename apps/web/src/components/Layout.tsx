@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { useSme } from '../context/SmeContext';
 import './Layout.css';
 
 const Layout: React.FC = () => {
+  const { smes, selectedSmeId, setSelectedSmeId, loading } = useSme();
+
   return (
     <div className="app-container">
       <aside className="sidebar">
@@ -28,8 +31,22 @@ const Layout: React.FC = () => {
         
         <div className="sidebar-footer">
           <div className="sme-badge">
-            <span className="sme-name">TechCorp SME</span>
-            <span className="sme-id">ID: sme_123</span>
+            <span className="sme-label">Viewing SME</span>
+            {loading ? (
+              <span className="sme-name">Loading...</span>
+            ) : (
+              <select
+                className="sme-selector"
+                value={selectedSmeId}
+                onChange={(e) => setSelectedSmeId(e.target.value)}
+              >
+                {smes.map((sme) => (
+                  <option key={sme.id} value={sme.id}>
+                    {sme.company_name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
         </div>
       </aside>
@@ -53,3 +70,5 @@ const Layout: React.FC = () => {
 };
 
 export default Layout;
+
+
